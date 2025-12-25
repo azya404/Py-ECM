@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-ecm"
+version = "0.1.0"
+description = "Enterprise-grade Python CLI for content lifecycle management"
+authors = [{name = "Azya", email = "azya404@users.noreply.github.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "typer[all]>=0.9.0",
+]
+
+[project.scripts]
+py-ecm = "py_ecm.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/azya404/Py-ECM"
+Repository = "https://github.com/azya404/Py-ECM"
