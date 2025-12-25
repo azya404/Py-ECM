@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-py-ecm = "py_ecm.cli:app"
+py-ecm = "py_ecm.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/azya404/Py-ECM"
