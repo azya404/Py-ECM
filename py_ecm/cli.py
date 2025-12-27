@@ -24,7 +24,8 @@ def create(
         base_path = Path(directory)
         if not base_path.exists():
             typer.secho(
-                f'ERROR\nDirectory does not exist: {directory}',  
+                f'ERROR\nDirectory does not exist: {directory}', 
+                fg=typer.colors.RED, 
                 err=True
             )
             raise typer.Exit(1)
@@ -35,7 +36,8 @@ def create(
     # Check if path/target is a directory
     if file_path.exists() and file_path.is_dir():
         typer.secho(
-            f"ERROR\n'{filename}' is a directory", 
+            f"ERROR\n'{filename}' is a directory",
+            fg=typer.colors.RED, 
             err=True
         )
         raise typer.Exit(1)
@@ -47,12 +49,14 @@ def create(
                 f.write(content)
         
         typer.secho(
-            f'File created successfully: {file_path}'
+            f'File created successfully: {file_path}', 
+            fg=typer.colors.GREEN
         )
         
     except FileExistsError:
         typer.secho(
-            f'ERROR\nFile already exists: {file_path}',  
+            f'ERROR\nFile already exists: {file_path}',
+            fg=typer.colors.RED,  
             err=True
         )
         raise typer.Exit(1)
@@ -60,6 +64,7 @@ def create(
     except PermissionError:
         typer.secho(
             f'ERROR\nPermission denied: {file_path}',  
+            fg=typer.colors.RED,
             err=True
         )
         raise typer.Exit(1)
@@ -67,6 +72,7 @@ def create(
     except IsADirectoryError:
         typer.secho(
             f"ERROR\n'{filename}' is a directory name", 
+            fg=typer.colors.RED,
             err=True
         )
         raise typer.Exit(1)
@@ -74,6 +80,7 @@ def create(
     except OSError as e:
         typer.secho(
             f'ERROR\nSystem error: {e}', 
+            fg=typer.colors.RED,
             err=True
         )
         raise typer.Exit(1)
