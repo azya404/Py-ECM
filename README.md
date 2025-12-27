@@ -73,15 +73,33 @@ cd Py-ECM
 pip install -e .
 ```
 
-## Usage (Preview)
+## Usage
+
+### Quick Start
 ```bash
+# Create a file
+py-ecm create report.txt
+
+# Create with content
+py-ecm create notes.txt --content "Hello World"
+
 # Check version
 py-ecm version
+```
 
-# More commands coming soon... (here's a sneak peak)
-# py-ecm create document.txt --tags project,urgent
-# py-ecm list --filter status=pending
-# py-ecm workflow start approval --document doc.txt
+### 📚 Full Documentation
+
+For detailed guides and examples, see the [documentation](docs/):
+
+- **[Installation Guide](docs/installation.md)** - Setup instructions
+- **[File Creation](docs/usage/create.md)** - Complete `create` command reference
+- **[Common Examples](docs/usage/examples.md)** - Real-world use cases
+- **[Command Reference](docs/README.md)** - All commands and options
+
+### Getting Help
+```bash
+py-ecm --help              # Show all commands
+py-ecm create --help       # Command-specific help
 ```
 
 ## Contributing
